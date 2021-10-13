@@ -45,7 +45,7 @@ data:
         repos:
         - ioachim-hub/jx-minikube
         - ioachim-hub/jx3-python-demo
-      target_url: http://lighthouse-jx.192.168.39.216.nip.io/merge/status
+      target_url: http://lighthouse-jx.192.168.39.194.nip.io/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null
