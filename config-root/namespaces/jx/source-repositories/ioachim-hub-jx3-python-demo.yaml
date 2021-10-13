@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: ioachim-hub
+    provider: github
+    repository: jx3-python-demo
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: ioachim-hub-jx3-python-demo
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/ioachim-hub/jx3-python-demo.git
+  org: ioachim-hub
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jx3-python-demo
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/ioachim-hub/jx3-python-demo
