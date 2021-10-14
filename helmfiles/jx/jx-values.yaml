@@ -38,7 +38,7 @@ jxRequirements:
   - key: staging
   - key: production
   ingress:
-    domain: 192.168.39.194.nip.io
+    domain: 192.168.49.2.nip.io
     kind: ingress
     namespaceSubDomain: -jx.
     tls:
@@ -46,7 +46,7 @@ jxRequirements:
       enabled: false
       production: false
   pipelineUser:
-    username: mygituser
+    username: ioachim.lihor
   repository: bucketrepo
   secretStorage: local
   vault: {}

@@ -29,6 +29,6 @@ spec:
     envOrganisation: todo
     gitServer: https://github.com
     kubeProvider: "minikube"
-    pipelineUsername: "mygituser"
+    pipelineUsername: "ioachim.lihor"
     pipelineUserEmail: "jenkins-x@googlegroups.com"
     prowConfig: Scheduler

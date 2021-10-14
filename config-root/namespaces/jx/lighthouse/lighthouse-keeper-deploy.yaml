@@ -27,7 +27,7 @@ spec:
         ad.datadoghq.com/keeper.logs: '[{"source":"lighthouse","service":"keeper"}]'
         prometheus.io/port: "9090"
         prometheus.io/scrape: "true"
-        jenkins-x.io/hash: '915cedbd704f57d0a064a805015575af63e9c001e904c7bbec79ea4db419a303'
+        jenkins-x.io/hash: 'b16d46ca61772a662bb1b458d2335987582bf4eb317b9018aee1299dbd99cc8e'
       labels:
         app: lighthouse-keeper
     spec:
@@ -64,7 +64,7 @@ spec:
             - name: "GIT_SERVER"
               value: "https://github.com"
             - name: "GIT_USER"
-              value: mygituser
+              value: ioachim.lihor
             - name: "GIT_TOKEN"
               valueFrom:
                 secretKeyRef:
