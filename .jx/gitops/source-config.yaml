@@ -9,6 +9,7 @@ spec:
     providerKind: github
     repositories:
     - name: jx3-python-demo
+    - name: minikube-jx-python-http
     scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
