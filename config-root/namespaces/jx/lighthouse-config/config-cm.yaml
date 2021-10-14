@@ -9,6 +9,7 @@ data:
       enabled:
         ioachim-hub/jx-minikube: true
         ioachim-hub/jx3-python-demo: true
+        ioachim-hub/minikube-jx-python-http: true
     plank: {}
     pod_namespace: jx
     prowjob_namespace: jx
@@ -22,6 +23,7 @@ data:
       merge_method:
         ioachim-hub/jx-minikube: merge
         ioachim-hub/jx3-python-demo: merge
+        ioachim-hub/minikube-jx-python-http: merge
       queries:
       - labels:
         - approved
@@ -34,6 +36,7 @@ data:
         repos:
         - ioachim-hub/jx-minikube
         - ioachim-hub/jx3-python-demo
+        - ioachim-hub/minikube-jx-python-http
       - labels:
         - updatebot
         missingLabels:
@@ -45,6 +48,7 @@ data:
         repos:
         - ioachim-hub/jx-minikube
         - ioachim-hub/jx3-python-demo
+        - ioachim-hub/minikube-jx-python-http
       target_url: http://lighthouse-jx.192.168.49.2.nip.io/merge/status
 kind: ConfigMap
 metadata:
