@@ -1,0 +1,61 @@
+# Source: minikube-jx-python-http/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minikube-jx-python-http-minikube-jx-python-http
+  labels:
+    draft: draft-app
+    chart: "minikube-jx-python-http-0.0.1"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'minikube-jx-python-http'
+    wave.pusher.com/update-on-config-change: 'true'
+  namespace: jx-staging
+spec:
+  selector:
+    matchLabels:
+      app: minikube-jx-python-http-minikube-jx-python-http
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        draft: draft-app
+        app: minikube-jx-python-http-minikube-jx-python-http
+    spec:
+      serviceAccountName: minikube-jx-python-http-minikube-jx-python-http
+      containers:
+        - name: minikube-jx-python-http
+          image: "10.101.230.103/ioachim-hub/minikube-jx-python-http:0.0.1"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: VERSION
+              value: 0.0.1
+          envFrom: null
+          ports:
+            - name: http
+              containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 400m
+              memory: 256Mi
+            requests:
+              cpu: 200m
+              memory: 128Mi
+      terminationGracePeriodSeconds:
+      imagePullSecrets:
+        - name: "tekton-container-registry-auth"
