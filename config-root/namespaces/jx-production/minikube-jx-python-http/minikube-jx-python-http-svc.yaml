@@ -1,0 +1,20 @@
+# Source: minikube-jx-python-http/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: minikube-jx-python-http
+  labels:
+    chart: "minikube-jx-python-http-0.0.1"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'minikube-jx-python-http'
+  namespace: jx-production
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    app: minikube-jx-python-http-minikube-jx-python-http
