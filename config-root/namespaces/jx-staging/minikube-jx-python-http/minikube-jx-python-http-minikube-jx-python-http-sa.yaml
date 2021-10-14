@@ -1,0 +1,10 @@
+# Source: minikube-jx-python-http/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: minikube-jx-python-http-minikube-jx-python-http
+  annotations:
+    meta.helm.sh/release-name: 'minikube-jx-python-http'
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
